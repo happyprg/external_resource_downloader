@@ -1,0 +1,51 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.8.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+group = 'com.happyprg'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    implementation 'org.springframework.boot:spring-boot-starter-mustache'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+
+    compile 'org.apache.commons:commons-lang3:3.9'
+    compile 'com.google.guava:guava:28.1-jre'
+
+    //for http
+    compile 'commons-io:commons-io:2.6'
+    compile 'commons-codec:commons-codec:1.13'
+
+    // for ftp protocol
+    compile 'commons-net:commons-net:3.6'
+    // for sftp protocol
+    compile 'com.jcraft:jsch:0.1.55'
+
+    // for testing
+//    testCompile 'org.mockftpserver:MockFtpServer:2.7.1'
+//    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.0.2'
+}
