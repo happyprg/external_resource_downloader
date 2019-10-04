@@ -1,3 +1,5 @@
+# Goal
+* Download several URI(L) included in one request asynchronously and in parallel via reactive programming, collect the result and respond in WebFlux.
 # Requirements
 * JDK1.8+
 * Gradle
